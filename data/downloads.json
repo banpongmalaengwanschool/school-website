@@ -16,11 +16,11 @@
     {
       "id": 2,
       "category": "ปฏิทิน",
-      "title": "ปฏิทินการศึกษา 2568",
-      "description": "ปฏิทินการศึกษาประจำปีการศึกษา 2568 ของโรงเรียน",
+      "title": "ปฏิทินการศึกษา 2569",
+      "description": "ปฏิทินการศึกษาประจำปีการศึกษา 2569 ของโรงเรียน",
       "file": {
-        "name": "calendar-2568.pdf",
-        "url": "downloads/calendar-2568.pdf",
+        "name": "calendar-2569.pdf",
+        "url": "downloads/calendar-2569.pdf",
         "size": "2.5 MB",
         "type": "pdf"
       },
@@ -30,14 +30,14 @@
       "id": 3,
       "category": "ประกาศ",
       "title": "ประกาศรับสมัครเรียน",
-      "description": "ประกาศรับสมัครนักเรียนใหม่ปีการศึกษา 2568",
+      "description": "ประกาศรับสมัครนักเรียนใหม่ปีการศึกษา 2569",
       "file": {
         "name": "admission-announcement.pdf",
         "url": "downloads/admission-announcement.pdf",
         "size": "0.8 MB",
         "type": "pdf"
       },
-      "date": "2025-02-18"
+      "date": "2026-02-18"
     },
     {
       "id": 4,
@@ -50,7 +50,7 @@
         "size": "3.2 MB",
         "type": "pdf"
       },
-      "date": "2025-02-17"
+      "date": "2026-02-17"
     }
   ]
 }
