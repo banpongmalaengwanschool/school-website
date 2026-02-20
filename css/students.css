@@ -1,0 +1,285 @@
+/* ===== STUDENTS PAGE STYLES ===== */
+
+/* Student Summary Cards */
+.student-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.summary-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-top: 3px solid var(--primary-pink);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-dark);
+}
+
+.summary-card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-pink);
+    margin-bottom: 0.75rem;
+}
+
+.summary-card-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.summary-card-label {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Level Tabs */
+.level-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease;
+}
+
+.level-tab {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-pink);
+    background: transparent;
+    color: var(--primary-pink);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.level-tab:hover,
+.level-tab.active {
+    background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 30, 140, 0.3);
+}
+
+/* Class Grid */
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Class Card */
+.class-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+    border-top: 4px solid var(--primary-pink);
+}
+
+.class-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-dark);
+}
+
+.class-card-header {
+    background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+    padding: 1.5rem;
+    color: var(--white);
+}
+
+.class-card-grade {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.class-card-icon {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.class-card-body {
+    padding: 1.5rem;
+}
+
+.class-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.class-stat {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(233, 30, 140, 0.05);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-pink);
+}
+
+.class-stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.class-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+}
+
+.class-stat.male {
+    border-left-color: #4ECDC4;
+}
+
+.class-stat.female {
+    border-left-color: #FF6B9D;
+}
+
+.class-stat.total {
+    border-left-color: var(--primary-pink);
+}
+
+/* Level Summary */
+.level-summary {
+    background: linear-gradient(135deg, rgba(233, 30, 140, 0.1), rgba(199, 21, 133, 0.1));
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    border-left: 4px solid var(--primary-pink);
+}
+
+.level-summary-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.level-summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.level-summary-stat {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.level-summary-stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-pink);
+}
+
+.level-summary-stat-label {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Chart Container */
+.chart-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.chart-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .class-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .level-tabs {
+        gap: 0.5rem;
+    }
+
+    .level-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .student-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .class-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .class-stat {
+        padding: 0.75rem;
+    }
+
+    .class-stat-number {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .class-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .level-tabs {
+        gap: 0.3rem;
+    }
+
+    .level-tab {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .student-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .class-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
