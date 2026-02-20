@@ -1,0 +1,56 @@
+{
+  "downloads": [
+    {
+      "id": 1,
+      "category": "แบบฟอร์ม",
+      "title": "แบบฟอร์มสมัครเรียน",
+      "description": "แบบฟอร์มสำหรับผู้ที่ต้องการสมัครเรียนที่โรงเรียนบ้านโป่งแมลงวัน",
+      "file": {
+        "name": "admission-form.docx",
+        "url": "downloads/admission-form.docx",
+        "size": "1.2 MB",
+        "type": "word"
+      },
+      "date": "2025-02-20"
+    },
+    {
+      "id": 2,
+      "category": "ปฏิทิน",
+      "title": "ปฏิทินการศึกษา 2568",
+      "description": "ปฏิทินการศึกษาประจำปีการศึกษา 2568 ของโรงเรียน",
+      "file": {
+        "name": "calendar-2568.pdf",
+        "url": "downloads/calendar-2568.pdf",
+        "size": "2.5 MB",
+        "type": "pdf"
+      },
+      "date": "2025-02-19"
+    },
+    {
+      "id": 3,
+      "category": "ประกาศ",
+      "title": "ประกาศรับสมัครเรียน",
+      "description": "ประกาศรับสมัครนักเรียนใหม่ปีการศึกษา 2568",
+      "file": {
+        "name": "admission-announcement.pdf",
+        "url": "downloads/admission-announcement.pdf",
+        "size": "0.8 MB",
+        "type": "pdf"
+      },
+      "date": "2025-02-18"
+    },
+    {
+      "id": 4,
+      "category": "เอกสาร",
+      "title": "คู่มือนักเรียน",
+      "description": "คู่มือนักเรียนของโรงเรียนบ้านโป่งแมลงวัน",
+      "file": {
+        "name": "student-handbook.pdf",
+        "url": "downloads/student-handbook.pdf",
+        "size": "3.2 MB",
+        "type": "pdf"
+      },
+      "date": "2025-02-17"
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เกี่ยวกับโรงเรียนบ้านโป่งแมลงวัน">
+    <title>เกี่ยวกับเรา - โรงเรียนบ้านโป่งแมลงวัน</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    
+    <style>
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-title i {
+            font-size: 2.5rem;
+        }
+
+        .about-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-pink);
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-content h3 {
+            color: var(--black);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .about-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(233, 30, 140, 0.1), rgba(199, 21, 133, 0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary-pink);
+        }
+
+        .highlight-box strong {
+            color: var(--primary-pink);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .mission-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-top: 3px solid var(--primary-pink);
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .mission-card i {
+            font-size: 2rem;
+            color: var(--primary-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-card h4 {
+            color: var(--black);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .mission-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 50px;
+            width: 2px;
+            height: calc(100% + 2rem);
+            background: var(--primary-pink);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            flex: 1;
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-text {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/logo.jpg" alt="โลโก้โรงเรียน" class="logo">
+                <div class="school-info">
+                    <h1>โรงเรียนบ้านโป่งแมลงวัน</h1>
+                    <p>(จิราธิวัฒน์อุปถัมภ์)</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">หน้าแรก</a></li>
+                    <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="staff.html">ครูและบุคลากร</a></li>
+                    <li><a href="index.html#students">นักเรียน</a></li>
+                    <li><a href="gallery.html">แกลเลอรี่</a></li>
+                    <li><a href="news.html">ข่าวสาร</a></li>
+                    <li><a href="index.html#contact">ติดต่อเรา</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="section-light" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="section-title">
+                <h2>เกี่ยวกับโรงเรียน</h2>
+                <p>รู้จักโรงเรียนบ้านโป่งแมลงวัน (จิราธิวัฒน์อุปถัมภ์)</p>
+            </div>
+
+            <!-- ประวัติโดยสังเขป -->
+            <div class="about-section">
+                <div class="about-title">
+                    <i class="fas fa-history"></i>
+                    ประวัติโดยสังเขป
+                </div>
+                <div class="about-content">
+                    <p>แต่เดิมเด็กๆในหมู่บ้านโป่งแมลงวันต้องเดินทางไปเรียนที่โรงเรียนบ้านหนองรังกา ระยะทางประมาณ 3 กิโลเมตร ต่อมา พันเอก(พิเศษ)จรัส ประเสริฐศรี นายนาค ชาญส่งเนิน ผู้ใหญ่บ้านพร้อมด้วยประชาชน ได้เล็งเห็นความลำบากในการเดินทางไปกลับของนักเรียน จึงเข้าร่วมประชุมปรึกษาหารือและลงมติให้ขออนุญาตจัดตั้งโรงเรียนขึ้นที่บ้านโป่งแมลงวัน หมู่ที่ 5 ตำบลโคกกรวด อำเภอเมืองนครราชสีมา จังหวัดนครราชสีมา</p>
+                    
+                    <h3>การก่อสร้างและการสนับสนุน</h3>
+                    <p>ปีพุทธศักราช 2518 เมื่อได้รับอนุญาตจากทางราชการ จึงได้ดำเนินการก่อสร้าง โดยมีชาวบ้านสละที่ดินจำนวน 13 ไร่ 25 ตารางวา เพื่อใช้เป็นสถานที่ก่อสร้าง วัสดุที่ใช้ในการก่อสร้างได้รับความอนุเคราะห์จาก กองบินยุทธการที่ 388 นครราชสีมา คิดเป็นมูลค่า 120,000 บาท ค่าจ้างแรงงานบริจาคโดย คุณวันชัย – คุณสุมาลี จิราธิวัฒน์ เป็นจำนวนเงิน 15,000 บาท จึงได้อาคารแบบ ป.1 ฉ ใต้ถุนส่ง 3 ห้องเรียน</p>
+
+                    <div class="highlight-box">
+                        <i class="fas fa-star"></i> <strong>ผู้อุปถัมภ์:</strong> คุณวันชัย – คุณสุมาลี จิราธิวัฒน์ ได้รับเป็นผู้อุปถัมภ์โรงเรียนตลอดไป
+                    </div>
+                </div>
+            </div>
+
+            <!-- ข้อมูลพื้นฐาน -->
+            <div class="about-section">
+                <div class="about-title">
+                    <i class="fas fa-info-circle"></i>
+                    ข้อมูลพื้นฐาน
+                </div>
+                <div class="about-content">
+                    <p><strong>ที่ตั้ง:</strong> หมู่ที่ 5 ตำบลโคกกรวด อำเภอเมืองนครราชสีมา จังหวัดนครราชสีมา รหัสไปรษณีย์ 30280</p>
+                    <p><strong>สังกัด:</strong> เขตพื้นที่การศึกษาประถมศึกษานครราชสีมา เขต 1 สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน กระทรวงศึกษาธิการ</p>
+                    <p><strong>ระดับการศึกษา:</strong> ระดับชั้นอนุบาลปีที่ 1 ถึง ชั้นมัธยมศึกษาปีที่ 3 รวมห้องเรียนทั้งสิ้น 12 ห้องเรียน</p>
+                    <p><strong>ผู้อำนวยการ:</strong> นายสุรชัย แพงเพ็ง</p>
+                    <p><strong>สีประจำโรงเรียน:</strong> ชมพู – ดำา</p>
+                </div>
+            </div>
+
+            <!-- อัตลักษณ์ -->
+            <div class="about-section">
+                <div class="about-title">
+                    <i class="fas fa-shield-alt"></i>
+                    อัตลักษณ์ของสถานศึกษา
+                </div>
+                <div class="about-content">
+                    <div class="highlight-box">
+                        <p><strong>ใฝ่เรียนรู้ สู่การงาน สืบสานวัฒนธรรมไทย น้อมนำาชีวิตพอเพียง</strong></p>
+                    </div>
+                    
+                    <h3>คำขวัญ</h3>
+                    <p><strong>ทำความดี มีวินัย ใฝ่ความรู้ สู่การงาน</strong></p>
+
+                    <h3>ปรัชญา</h3>
+                    <p><strong>ความรู้ คุณค่า คุณธรรม</strong></p>
+                </div>
+            </div>
+
+            <!-- วิสัยทัศน์ พันธกิจ เป้าหมาย -->
+            <div class="about-section">
+                <div class="about-title">
+                    <i class="fas fa-rocket"></i>
+                    วิสัยทัศน์ พันธกิจ และเป้าหมาย
+                </div>
+                <div class="about-content">
+                    <h3>วิสัยทัศน์ (Vision)</h3>
+                    <p>มุ่งมั่นพัฒนาผู้เรียนเป็นคนดี คนเก่ง โดดเด่นศิลปะ มีทักษะที่จำเป็นในศตวรรษที่ 21 ด้วยครูมืออาชีพ ภายใต้การบริหารจัดการแบบมีส่วนร่วม ใส่ใจสิ่งแวดล้อม น้อมนำาศาสตร์พระราชา</p>
+
+                    <h3>พันธกิจ (Mission)</h3>
+                    <div class="mission-grid">
+                        <div class="mission-card">
+                            <i class="fas fa-heart"></i>
+                            <h4>พัฒนาคุณธรรม</h4>
+                            <p>พัฒนาผู้เรียนให้มีสุขภาพกาย สุขภาพจิตที่สมบูรณ์ เป็นคนดี มีคุณธรรม จริยธรรม</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-book"></i>
+                            <h4>พัฒนาวิชาการ</h4>
+                            <p>พัฒนาผู้เรียนให้มีความรอบรู้ เป็นเลิศด้านวิชาการ</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-palette"></i>
+                            <h4>ส่งเสริมศิลปะ</h4>
+                            <p>ส่งเสริมความสามารถพิเศษนักเรียนด้านทัศนศิลป์ คีตกวี ดนตรี ทักษะกีฬา</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-laptop"></i>
+                            <h4>เทคโนโลยี</h4>
+                            <p>จัดการเรียนการสอนด้วยเทคโนโลยีและนวัตกรรมที่ทันสมัย</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-users"></i>
+                            <h4>พัฒนาครู</h4>
+                            <p>ส่งเสริมครูและบุคลากรให้มีความเป็นเลิศทางวิชาการ มีคุณภาพตามมาตรฐาน</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-leaf"></i>
+                            <h4>สิ่งแวดล้อม</h4>
+                            <p>ส่งเสริมและพัฒนาสิ่งแวดล้อมให้เป็นแหล่งเรียนรู้ที่เหมาะสม สวยงาม ปลอดภัย</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">เป้าหมาย (Goals)</h3>
+                    <ul>
+                        <li>ผู้เรียนมีสุขภาพกาย สุขภาพจิตที่สมบูรณ์ เป็นคนดี มีคุณธรรม จริยธรรม</li>
+                        <li>ผู้เรียนมีความรอบรู้ เป็นเลิศด้านวิชาการ</li>
+                        <li>ผู้เรียนได้รับการส่งเสริมความสามารถพิเศษด้านศิลปะและกีฬา</li>
+                        <li>ผู้เรียนมีทักษะในศตวรรษที่ 21</li>
+                        <li>ผู้เรียนมีทัศนคติที่ดีต่อบ้านเมือง มีพื้นฐานชีวิตที่มั่นคง มีอาชีพ และเป็นพลเมืองดี</li>
+                        <li>ครูสามารถจัดการเรียนการสอนด้วยเทคโนโลยีและนวัตกรรมที่ทันสมัย</li>
+                        <li>โรงเรียนมีการบริหารงานอย่างเป็นระบบ</li>
+                        <li>โรงเรียนมีภาคีเครือข่ายที่เข้มแข็ง</li>
+                        <li>โรงเรียนเป็นสถานศึกษาที่สะอาด ปลอดภัย มีแหล่งเรียนรู้ที่เหมาะสม สวยงาม</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- สภาพชุมชน -->
+            <div class="about-section">
+                <div class="about-title">
+                    <i class="fas fa-city"></i>
+                    สภาพชุมชนและสิ่งแวดล้อม
+                </div>
+                <div class="about-content">
+                    <h3>ข้อมูลชุมชน</h3>
+                    <p>ชุมชนมีประชากรประมาณ 2,500 คน ส่วนใหญ่ประกอบอาชีพทำไร่ ทำนา และรับจ้างทั่วไป นับถือศาสนาพุทธ มีรายได้ประมาณ 5,000 บาท/ปี/คน ผู้ปกครองส่วนใหญ่จบการศึกษาระดับประถมศึกษา มีชีวิตความเป็นอยู่เรียบง่าย มีฐานะค่อนข้างยากจน แต่ชุมชนมีความสามัคคีร่วมแรงร่วมใจ</p>
+
+                    <h3>ทรัพยากรท้องถิ่น</h3>
+                    <p>ชุมชนมีการทำไร่ ทำนา ปลูกพืชและเลี้ยงสัตว์ อันเป็นภูมิปัญญาท้องถิ่น นอกจากนี้ยังมีการทำดินผสม การทำเฟอร์นิเจอร์จากไม้ เป็นต้น ซึ่งถือได้ว่าเป็นแหล่งเรียนรู้ของผู้เรียนได้เป็นอย่างดี ชุมชนมีวัดจิราธิวัฒน์เป็นแหล่งเรียนรู้ทางด้านศาสนาและวัฒนธรรม รวมทั้งคุณธรรม จริยธรรม</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>โรงเรียนบ้านโป่งแมลงวัน</h3>
+                    <p>โรงเรียนมัธยมศึกษาตั้งอยู่ที่นครราชสีมา ที่มุ่งมั่นพัฒนาผู้เรียนให้เป็นคนดี คนเก่ง และมีทักษะในศตวรรษที่ 21</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>ลิงก์ด่วน</h3>
+                    <ul>
+                        <li><a href="index.html#home">หน้าแรก</a></li>
+                        <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                        <li><a href="staff.html">ครูและบุคลากร</a></li>
+                        <li><a href="gallery.html">แกลเลอรี่</a></li>
+                        <li><a href="news.html">ข่าวสาร</a></li>
+                        <li><a href="downloads.html">ดาวโหลด</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: var(--light-pink); margin-right: 0.5rem;"></i>
+                            หมู่ที่ 5 ตำบลโคกกรวด อำเภอเมืองนครราชสีมา จังหวัดนครราชสีมา 30280
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="color: var(--light-pink); margin-right: 0.5rem;"></i>
+                            <a href="mailto:pmaelngwan@gmail.com">pmaelngwan@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>ติดตามเรา</h3>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; transition: all 0.3s ease;" onmouseover="this.style.background='var(--light-pink)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; transition: all 0.3s ease;" onmouseover="this.style.background='var(--light-pink)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="fab fa-line"></i>
+                        </a>
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; transition: all 0.3s ease;" onmouseover="this.style.background='var(--light-pink)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2568 โรงเรียนบ้านโป่งแมลงวัน (จิราธิวัฒน์อุปถัมภ์) สงวนสิทธิ์ทั้งหมด</p>
+                <p>ออกแบบและพัฒนาโดย <strong>Manus</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

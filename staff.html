@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="รายชื่อครูและบุคลากรของโรงเรียนบ้านโป่งแมลงวัน">
+    <title>ครูและบุคลากร - โรงเรียนบ้านโป่งแมลงวัน</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/staff.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+</head>
+<body>
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/logo.jpg" alt="โลโก้โรงเรียน" class="logo">
+                <div class="school-info">
+                    <h1>โรงเรียนบ้านโป่งแมลงวัน</h1>
+                    <p>(จิราธิวัฒน์อุปถัมภ์)</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">หน้าแรก</a></li>
+                    <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                    <li><a href="staff.html">ครูและบุคลากร</a></li>
+                    <li><a href="index.html#students">นักเรียน</a></li>
+                    <li><a href="gallery.html">แกลเลอรี่</a></li>
+                    <li><a href="news.html">ข่าวสาร</a></li>
+                    <li><a href="index.html#contact">ติดต่อเรา</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== STAFF SECTION ===== -->
+    <section class="section-light" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="section-title">
+                <h2>ครูและบุคลากร</h2>
+                <p>ทีมงานที่มุ่งมั่นพัฒนาผู้เรียนให้เป็นคนดี</p>
+            </div>
+
+            <!-- Staff Statistics -->
+            <div id="staffStats" class="staff-stats"></div>
+
+            <!-- Search Box -->
+            <div class="staff-search">
+                <input 
+                    type="text" 
+                    id="staffSearchInput" 
+                    class="staff-search-input" 
+                    placeholder="ค้นหาชื่อ ตำแหน่ง หรือแผนก..."
+                >
+                <button id="staffSearchBtn" class="staff-search-btn">
+                    <i class="fas fa-search"></i> ค้นหา
+                </button>
+            </div>
+
+            <!-- Staff Filter -->
+            <div class="staff-filter">
+                <button class="staff-filter-btn active" onclick="filterStaff('all')">
+                    <i class="fas fa-users"></i> ทั้งหมด
+                </button>
+                <button class="staff-filter-btn" onclick="filterStaff('การเรียนการสอน')">
+                    <i class="fas fa-chalkboard-user"></i> ครูและอาจารย์
+                </button>
+                <button class="staff-filter-btn" onclick="filterStaff('บริหาร')">
+                    <i class="fas fa-user-tie"></i> ผู้บริหาร
+                </button>
+                <button class="staff-filter-btn" onclick="filterStaff('บริหารทั่วไป')">
+                    <i class="fas fa-headset"></i> บุคลากรสนับสนุน
+                </button>
+                <button class="staff-filter-btn" onclick="filterStaff('อนุบาล')">
+                    <i class="fas fa-child"></i> อนุบาล
+                </button>
+            </div>
+
+            <!-- Staff Grid -->
+            <div id="staffGrid" class="staff-grid"></div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>โรงเรียนบ้านโป่งแมลงวัน</h3>
+                    <p>โรงเรียนมัธยมศึกษาตั้งอยู่ที่นครราชสีมา ที่มุ่งมั่นพัฒนาผู้เรียนให้เป็นคนดี คนเก่ง และมีทักษะในศตวรรษที่ 21</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>ลิงก์ด่วน</h3>
+                    <ul>
+                        <li><a href="index.html#home">หน้าแรก</a></li>
+                        <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                        <li><a href="staff.html">ครูและบุคลากร</a></li>
+                        <li><a href="gallery.html">แกลเลอรี่</a></li>
+                        <li><a href="news.html">ข่าวสาร</a></li>
+                        <li><a href="downloads.html">ดาวโหลด</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: var(--light-pink); margin-right: 0.5rem;"></i>
+                            หมู่ที่ 5 ตำบลโคกกรวด อำเภอเมืองนครราชสีมา จังหวัดนครราชสีมา 30280
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="color: var(--light-pink); margin-right: 0.5rem;"></i>
+                            <a href="mailto:pmaelngwan@gmail.com">pmaelngwan@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>ติดตามเรา</h3>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; transition: all 0.3s ease;" onmouseover="this.style.background='var(--light-pink)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; transition: all 0.3s ease;" onmouseover="this.style.background='var(--light-pink)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="fab fa-line"></i>
+                        </a>
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; transition: all 0.3s ease;" onmouseover="this.style.background='var(--light-pink)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2568 โรงเรียนบ้านโป่งแมลงวัน (จิราธิวัฒน์อุปถัมภ์) สงวนสิทธิ์ทั้งหมด</p>
+                <p>ออกแบบและพัฒนาโดย <strong>Manus</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/staff.js"></script>
+</body>
+</html>
