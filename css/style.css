@@ -128,7 +128,7 @@ header {
 
 .logo-section img {
     height: 120px;
-    width: 120px;
+    width: 100px;
     animation: pulse 2s ease-in-out infinite;
 }
 
