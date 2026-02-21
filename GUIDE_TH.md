@@ -214,18 +214,7 @@
     "type": "excel"
   },
   "date": "2025-02-21
-  {
-  "id": 5,
-  "category": "ชื่อหมวดหมู่",
-  "title": "ชื่อไฟล์",
-  "description": "คำอธิบายไฟล์",
-  "file": {
-    "name": "filename.pdf",
-    "url": "downloads/filename.pdf",
-    "size": "X MB",
-    "type": "pdf"
-  },
-  "date": "2025-02-21"
+
 }
 ```
 
