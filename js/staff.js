@@ -80,7 +80,7 @@ function renderStaffStats() {
 }
 
 // Filter staff by department
-function filterStaff(department) {
+function filterStaff(department, event) {
     if (department === 'all') {
         filteredStaff = allStaff;
     } else {
@@ -91,7 +91,9 @@ function filterStaff(department) {
     document.querySelectorAll('.staff-filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
+    if (event) {
     event.target.classList.add('active');
+}
     
     renderStaffCards();
 }
