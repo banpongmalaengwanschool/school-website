@@ -224,9 +224,10 @@ nav a:hover::after {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    margin: 0 auto;          /* เพิ่มบรรทัดนี้ */
+    text-align: center;      /* เพิ่มบรรทัดนี้ */
     animation: fadeInUp 1s ease;
 }
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
