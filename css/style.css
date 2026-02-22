@@ -247,13 +247,24 @@ nav a:hover::after {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--light-pink), var(--accent-gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: slideInDown 0.8s ease;
+    display: inline-block;
+    padding: 10px 35px;
+
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+
+    color: #ffffff;
+
+    border: 2px solid #ffd700;
+    border-radius: 40px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.5);
+
+    backdrop-filter: blur(4px);
 }
 
 .hero p {
