@@ -7,7 +7,7 @@ let currentLevelIndex = 0;
 async function loadStudents() {
     try {
         const response = await fetch('data/students.json');
-        const data = response.json();
+        const data = await response.json();
         return data;
     } catch (error) {
         console.error('Error loading students:', error);
