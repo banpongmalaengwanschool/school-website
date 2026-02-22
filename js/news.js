@@ -146,7 +146,7 @@ function initializeDownloadFilters() {
     
     if (filterContainer) {
         filterContainer.innerHTML = categories.map(cat => `
-            <button class="filter-btn ${cat === 'all' ? 'active' : ''}" onclick="filterDownloads('${cat}')">
+            <button class="filter-btn ${cat === 'all' ? 'active' : ''}" onclick="filterDownloads('${cat}', event)">
                 ${cat === 'all' ? 'ทั้งหมด' : cat}
             </button>
         `).join('');
@@ -154,12 +154,14 @@ function initializeDownloadFilters() {
 }
 
 // Filter downloads by category
-function filterDownloads(category) {
+function filterDownloads(category, event) {
     // Update active button
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
+    if (event) {
     event.target.classList.add('active');
+}
     
     // Filter and render
     const filtered = category === 'all' ? allDownloads : allDownloads.filter(item => item.category === category);
