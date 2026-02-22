@@ -1,4 +1,5 @@
 /* ===== ROOT VARIABLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap');
 :root {
     --primary-pink: #E91E8C;
     --dark-pink: #C71585;
@@ -26,7 +27,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--white);
