@@ -50,7 +50,7 @@ function renderStaffStats() {
     const totalStaff = allStaff.length;
     const teachers = allStaff.filter(s => s.department === 'การเรียนการสอน').length;
     const admin = allStaff.filter(s => s.department === 'บริหาร').length;
-    const support = allStaff.filter(s => s.department === 'บริหารทั่วไป').length;
+    const support = allStaff.filter(s => s.department === 'สนับสนุน').length;
     
     const statsContainer = document.getElementById('staffStats');
     if (statsContainer) {
