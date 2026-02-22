@@ -24,7 +24,7 @@ function initializeFilters() {
     
     if (filterContainer) {
         filterContainer.innerHTML = categories.map(cat => `
-            <button class="filter-btn ${cat === 'all' ? 'active' : ''}" onclick="filterNews('${cat}')">
+            <button class="filter-btn ${cat === 'all' ? 'active' : ''}" onclick="filterNews('${cat}', event)">
                 ${cat === 'all' ? 'ทั้งหมด' : cat}
             </button>
         `).join('');
@@ -32,14 +32,16 @@ function initializeFilters() {
 }
 
 // Filter news by category
-function filterNews(category) {
+function filterNews(category, event) {
     currentFilter = category;
     
     // Update active button
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
+    if (event) {
     event.target.classList.add('active');
+}
     
     // Filter and render
     const filtered = category === 'all' ? allNews : allNews.filter(item => item.category === category);
