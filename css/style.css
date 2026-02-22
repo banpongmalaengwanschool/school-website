@@ -196,8 +196,8 @@ nav a:hover::after {
 .hero {
     background:
         linear-gradient(
-            rgba(255, 0, 120, 0.35),
-            rgba(255, 0, 120, 0.35)
+            rgba(255, 0, 120, 0.15),
+            rgba(255, 0, 120, 0.15)
         ),
         url('../images/school-entrance.png') center 60% / cover no-repeat;
 
