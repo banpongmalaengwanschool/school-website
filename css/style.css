@@ -247,24 +247,42 @@ nav a:hover::after {
 }
 
 .hero h1 {
+    position: relative;
     display: inline-block;
-    padding: 10px 35px;
+    padding: 18px 60px;
 
     font-size: 2.6rem;
     font-weight: 700;
     text-align: center;
 
     color: #ffffff;
+}
 
-    border: 2px solid #ffd700;
-    border-radius: 40px;
+/* กรอบทองโค้ง */
+.hero h1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 3px; /* ความหนากรอบ */
 
-    background: rgba(0, 0, 0, 0.35);
+    border-radius: 60px;
 
-    box-shadow: 
-        0 0 15px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(
+        135deg,
+        #fff8dc,
+        #ffd700,
+        #ffcc00,
+        #ffd700,
+        #fff8dc
+    );
 
-    backdrop-filter: blur(4px);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+
+    pointer-events: none;
 }
 
 .hero p {
