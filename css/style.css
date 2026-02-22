@@ -91,7 +91,7 @@ a:hover {
 
 /* ===== HEADER & NAVIGATION ===== */
 header {
-    background: linear-gradient(135deg, var(--white) 0%, rgba(233, 30, 140, 0.05) 100%);
+    background: var(--white);
     padding: 1rem 0;
     box-shadow: var(--shadow);
     position: sticky;
