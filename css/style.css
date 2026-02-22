@@ -194,7 +194,7 @@ nav a:hover::after {
 /* ===== HERO SECTION ===== */
 .hero {
     background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%),
-                url('../images/school-entrance.png') center 45% / cover no-repeat;
+                url('../images/school-entrance.png') center 80% / cover no-repeat;
     background-blend-mode: overlay;
     color: var(--white);
     padding: 6rem 2rem;
