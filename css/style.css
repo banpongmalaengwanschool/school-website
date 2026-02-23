@@ -674,19 +674,25 @@ body[data-mourning="on"] {
     filter: grayscale(60%) brightness(95%);
 }
 
-/* ริบบิ้นดำ */
+
+/* ===== Bottom Right Mourning Ribbon ===== */
+
 .mourning-ribbon {
     position: fixed;
-    top: 0;
+    bottom: 0;
     right: 0;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, transparent 50%, black 50%);
     z-index: 9999;
     pointer-events: none;
     display: none;
 }
 
-body[data-mourning="off"] .mourning-ribbon {
+.mourning-ribbon img {
+    width: 130px;
+    height: auto;
+    filter: drop-shadow(0px -2px 6px rgba(0,0,0,0.3));
+}
+
+/* เปิดเฉพาะตอนเปิดโหมด */
+body[data-mourning="on"] .mourning-ribbon {
     display: block;
 }
