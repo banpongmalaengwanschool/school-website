@@ -462,12 +462,11 @@ footer {
 }
 
 .footer-section a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease;
 }
-
 .footer-section a:hover {
-    color: var(--light-pink);
+    color: #ffffff;
     padding-left: 5px;
 }
 
