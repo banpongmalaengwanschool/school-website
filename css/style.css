@@ -670,29 +670,22 @@ footer {
     font-weight: normal;
 }
 /* ===== Mourning Mode Control ===== */
-body[data-mourning="on"] {
-    filter: grayscale(60%) brightness(95%);
+body[data-mourning="on"] *:not(.mourning-ribbon) {
+    filter: grayscale(20%) brightness(95%);
 }
 
-
-/* ===== Bottom Right Mourning Ribbon ===== */
+/* ===== Mourning Ribbon Fixed Bottom Right ===== */
 
 .mourning-ribbon {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 9999;
+    position: fixed !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    z-index: 999999 !important;
     pointer-events: none;
-    display: none;
 }
 
 .mourning-ribbon img {
-    width: 130px;
+    width: 250px;
     height: auto;
-    filter: drop-shadow(0px -2px 6px rgba(0,0,0,0.3));
-}
-
-/* เปิดเฉพาะตอนเปิดโหมด */
-body[data-mourning="on"] .mourning-ribbon {
     display: block;
 }
