@@ -685,7 +685,7 @@ body[data-mourning="on"] *:not(.mourning-ribbon) {
 }
 
 .mourning-ribbon img {
-    width: 250px;
+    width: 200px;
     height: auto;
     display: block;
 }
