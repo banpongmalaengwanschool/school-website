@@ -665,3 +665,7 @@ footer {
 .gallery-link {
     text-align: center;
 }
+.sub-name {
+    font-size: 0.8em;
+    font-weight: normal;
+}
