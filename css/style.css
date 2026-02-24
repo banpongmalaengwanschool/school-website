@@ -668,10 +668,10 @@ footer {
     font-size: 0.8em;
     font-weight: normal;
 }
-/* ===== Mourning Mode Control ===== */
-body[data-mourning="on"] *:not(.mourning-ribbon) {
-    filter: grayscale(20%) brightness(95%);
-}
+/* ===== เปิด-ปิด โหมดไว้อาลัยตรงนี้ ===== */
+body[data-mourning="on"] *:not(.mourning-ribbon):not(.sub-name) {    
+    filter: grayscale(10%) brightness(95%);
+}  
 
 /* ===== Mourning Ribbon Fixed Bottom Right ===== */
 
