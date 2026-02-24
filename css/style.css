@@ -228,7 +228,7 @@ nav a:hover::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 0, 120, 0.35); /* 50% */
+    background: rgba(235, 220, 227, 0.35); /* 50% */
     z-index: 1;
     pointer-events: none;
 }
