@@ -673,7 +673,7 @@ footer {
     font-weight: normal;
 }
 /* ===== เปิด-ปิด โหมดไว้อาลัยตรงนี้ ===== */
-body[data-mourning="on"] *:not(.mourning-ribbon):not(.sub-name) {    
+body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {    
     filter: grayscale(10%) brightness(95%);
 }  
 
