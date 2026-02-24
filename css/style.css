@@ -726,8 +726,8 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
 .video-overlay {
   position: absolute;
   bottom: -100px;
-  right: -50px;
-  width: 600px;
+  right: 25px;
+  width: 450px;
   z-index: 10;
 }
 
