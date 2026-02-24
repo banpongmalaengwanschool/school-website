@@ -707,3 +707,37 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
     object-position: center 1%;   /* 👈 ปรับตำแหน่งรูป */
     border-radius: 50%;
 }
+.hero-section {
+  position: relative;
+  background: url("images/your-background.jpg") center/cover no-repeat;
+  height: 500px;   /* ปรับความสูงตามต้องการ */
+}
+
+/* กล่องวิดีโอที่ซ้อนอยู่ */
+.hero-section {
+  position: relative;
+  height: 500px; /* ปรับตามความสูงภาพ */
+}
+
+/* วิดีโอซ้อน */
+.video-overlay {
+  position: absolute;
+  bottom: -100px;
+  right: -50px;
+  width: 600px;
+  z-index: 2;
+}
+
+.video-overlay iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ให้ข้อความอยู่เหนือ */
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
