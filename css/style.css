@@ -91,7 +91,12 @@ a:hover {
 
 /* ===== HEADER & NAVIGATION ===== */
 header {
-    background: var(--white);
+   background: linear-gradient(
+    to top,
+    var(--dark-gray) 0%,
+    #ffffff 5%
+);
+
     padding: 1rem 0;
     box-shadow: var(--shadow);
     position: sticky;
