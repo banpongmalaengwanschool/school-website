@@ -726,7 +726,7 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
 .video-overlay {
   position: absolute;
   bottom: -100px;   /* อย่าใช้ค่าติดลบก่อน */
-  right: -20px;
+  right: 1px;
   width: 350px;
   z-index: 3;    /* สูงกว่าทุกอย่าง */
 }
