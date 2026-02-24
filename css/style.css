@@ -725,10 +725,10 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
 /* วิดีโอซ้อน */
 .video-overlay {
   position: absolute;
-  bottom: 20px;   /* อย่าใช้ค่าติดลบก่อน */
-  right: 40px;
+  bottom: -100px;   /* อย่าใช้ค่าติดลบก่อน */
+  right: -20px;
   width: 350px;
-  z-index: 20;    /* สูงกว่าทุกอย่าง */
+  z-index: 3;    /* สูงกว่าทุกอย่าง */
 }
 
 .video-overlay iframe {
