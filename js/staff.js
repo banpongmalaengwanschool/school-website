@@ -30,7 +30,9 @@ function renderStaffCards() {
     container.innerHTML = filteredStaff.map(staff => `
         <div class="staff-card">
             <div class="staff-card-header">
-                <div class="staff-card-avatar">${staff.icon}</div>
+                <div class="staff-card-avatar">
+    <img src="images/staff/${staff.image}" alt="${staff.name}">
+</div>
                 <div class="staff-card-name">${staff.name}</div>
                 <div class="staff-card-position">${staff.position}</div>
             </div>
