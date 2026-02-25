@@ -60,14 +60,23 @@ function renderNews(newsArray) {
     container.innerHTML = newsArray.map(news => `
         <div class="news-card">
             <div class="news-card-image">
-                ${news.image ? `<img src="${news.image}" alt="${news.title}" onerror="this.parentElement.innerHTML='<div class=news-card-image-placeholder><i class=fas fa-newspaper></i></div>'">` : '<div class="news-card-image-placeholder"><i class="fas fa-newspaper"></i></div>'}
+               ${
+        news.video
+        ? `
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/${news.video}?autoplay=1&mute=1&loop=1&playlist=${news.video}&playsinline=1"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                </iframe>
             </div>
-            <div class="news-card-content">
-                <span class="news-card-category">${news.category}</span>
-                <div class="news-card-date">
-                    <i class="fas fa-calendar"></i>
-                    ${formatDate(news.date)}
-                </div>
+          `
+        : news.image
+            ? `<img src="${news.image}" alt="${news.title}" 
+               onerror="this.parentElement.innerHTML='<div class=news-card-image-placeholder><i class=fas fa-newspaper></i></div>'">`
+            : '<div class="news-card-image-placeholder"><i class="fas fa-newspaper"></i></div>'
+    }
+</div>
                 <h3 class="news-card-title">${news.title}</h3>
                 <p class="news-card-description">${news.description}</p>
                 ${news.files && news.files.length > 0 ? `

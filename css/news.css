@@ -429,3 +429,17 @@
         flex-direction: column;
     }
 }
+/* ===== Video Header in News Card ===== */
+.news-card .video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.news-card .video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

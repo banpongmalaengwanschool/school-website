@@ -738,7 +738,21 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
   border: none;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
+.video-overlay1 {
+  position: absolute;
+  bottom: -500px;   /* อย่าใช้ค่าติดลบก่อน */
+  right: 500px;
+  width: 350px;
+  z-index: 3;    /* สูงกว่าทุกอย่าง */
+}
 
+.video-overlay1 iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
 /* ให้ข้อความอยู่เหนือ */
 .hero-content {
   position: relative;
