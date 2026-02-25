@@ -779,7 +779,7 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
     position: absolute;
     right: 20px;
     top: 20px;
-    color: #f5f5f5;
+    color: #333333;
     z-index: 2001;
 }
 
@@ -790,7 +790,7 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
     position: fixed;
     top: 0;
     right: -250px;
-    background: #111;
+    background: #FF69B4;
     padding-top: 90px;
     transition: 0.4s;
     z-index: 2000;
@@ -811,4 +811,16 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
 /* แสดงเมนูเมื่อเปิด */
 .side-menu.active {
     right: 0;
+}
+.header-container {
+    position: relative;
+}
+.home-page header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.home-page {
+    padding-top: 140px; /* เท่าความสูง header */
 }
