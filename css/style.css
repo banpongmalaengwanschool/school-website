@@ -661,6 +661,10 @@ footer {
     display: flex;
   flex-direction: column;   /* เรียงลงแนวตั้ง */
   gap: 20px;
+  width: 100%;
+  height: auto;        /* สำคัญมาก */
+  object-fit: contain; /* ไม่ตัดภาพ */
+
 }
 
 .gallery-item {
