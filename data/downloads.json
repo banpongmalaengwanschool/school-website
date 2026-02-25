@@ -6,10 +6,10 @@
       "title": "แบบฟอร์มสมัครเรียน",
       "description": "แบบฟอร์มสำหรับผู้ที่ต้องการสมัครเรียนที่โรงเรียนบ้านโป่งแมลงวัน (จิราธิวัฒน์อุปถัมภ์)",
       "file": {
-        "name": "admission-form.docx",
-        "url": "downloads/admission-form.docx",
-        "size": "1.2 MB",
-        "type": "word"
+        "name": "ใบสมัครเข้าเรียน",
+        "url": "downloads/s1.pdf",
+        "size": "85 kb",
+        "type": "pdf"
       },
       "date": "2025-02-20"
     },
