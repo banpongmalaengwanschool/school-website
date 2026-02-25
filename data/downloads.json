@@ -28,32 +28,6 @@
     },
     {
       "id": 3,
-      "category": "ประกาศ",
-      "title": "ประกาศรับสมัครเรียน",
-      "description": "ประกาศรับสมัครนักเรียนใหม่ปีการศึกษา 2568 ของโรงเรียนบ้านโป่งแมลงวัน (จิราธิวัฒน์อุปถัมภ์)",
-      "file": {
-        "name": "admission-announcement.pdf",
-        "url": "downloads/admission-announcement.pdf",
-        "size": "0.8 MB",
-        "type": "pdf"
-      },
-      "date": "2026-02-18"
-    },
-    {
-      "id": 4,
-      "category": "เอกสาร",
-      "title": "คู่มือนักเรียน",
-      "description": "คู่มือนักเรียนของโรงเรียนบ้านโป่งแมลงวัน (จิราธิวัฒน์อุปถัมภ์)",
-      "file": {
-        "name": "student-handbook.pdf",
-        "url": "downloads/student-handbook.pdf",
-        "size": "3.2 MB",
-        "type": "pdf"
-      },
-      "date": "2026-02-17"
-    },
-    {
-      "id": 5,
       "category": "รายชื่อนักเรียน",
       "title": "รายชื่อนักเรียน2568",
       "description": "รายชื่อนักเรียนปีการศึกษา 2568 ของโรงเรียนบ้านโป่งแมลงวัน (จิราธิวัฒน์อุปถัมภ์)",
@@ -62,6 +36,33 @@
         "url": "downloads/4747.xlsx",
         "size": "-",
         "type": "xlsx"
+      },
+      "date": "2025-02-21"
+      
+    },
+    {
+      "id": 4,
+      "category": "--",
+      "title": "--",
+      "description": "--",
+      "file": {
+        "name": "--",
+        "url": "--",
+        "size": "--",
+        "type": "--"
+      },
+      "date": "2026-02-17"
+    },
+    {
+      "id": 5,
+      "category": "--",
+      "title": "--",
+      "description": "--",
+      "file": {
+        "name": "--",
+        "url": "--",
+        "size": "-",
+        "type": "--"
       },
       "date": "2025-02-21"
     }
