@@ -45,16 +45,21 @@
 </h1>
                 </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#home">หน้าแรก</a></li>
-                    <li><a href="index.html#about">เกี่ยวกับเรา</a></li>
-                    <li><a href="staff.html">ครูและบุคลากร</a></li>
-                    <li><a href="index.html#students">นักเรียน</a></li>
-                    <li><a href="news.html">ข่าวสาร</a></li>
-                    <li><a href="index.html#contact">ติดต่อเรา</a></li>
-                </ul>
-            </nav>
+            <!-- ปุ่มสามขีด -->
+<div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+</div>
+
+<!-- เมนูสไลด์จากข้างขวา -->
+<nav class="side-menu" id="sideMenu">
+    <a href="index.html">หน้าแรก</a>
+    <a href="about.html">เกี่ยวกับเรา</a>
+    <a href="staff.html">ครูและบุคลากร</a>
+    <a href="index.html#students">นักเรียน</a>
+    <a href="gallery.html">แกลเลอรี่</a>
+    <a href="news.html">ข่าวสาร</a>
+    <a href="index.html#contact">ติดต่อเรา</a>
+</nav>
         </div>
     </header>
 
@@ -143,5 +148,10 @@
     <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script src="js/news.js"></script>
+     <script>
+function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>

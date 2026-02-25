@@ -134,8 +134,8 @@ header {
 }
 
 .logo-section img {
-    height: 90px;
-    width: 80px;
+    height: 70px;
+    width: 60px;
     animation: pulse 2s ease-in-out infinite;
 }
 
@@ -163,40 +163,6 @@ header {
     margin: 0;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-nav a {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--text-dark);
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-pink), var(--dark-pink));
-    transition: width 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--primary-pink);
-}
-
-nav a:hover::after {
-    width: 100%;
-}
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -494,10 +460,7 @@ footer {
         gap: 1rem;
     }
 
-    nav ul {
-        gap: 1rem;
-    }
-
+    
     h1 {
         font-size: 2.5rem;
     }
@@ -783,7 +746,7 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
 .social-icons a {
   color: white;
   margin-right: 15px;
-  font-size: 25px;
+  font-size: 15px;
   transition: 0.3s;
 }
 
@@ -808,4 +771,44 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
     gap: 5px;
     text-align: center;
   }
+}
+/* ปุ่มเมนู ☰ */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #f5f5f5;
+    z-index: 2001;
+}
+
+/* เมนูด้านข้าง */
+.side-menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background: #111;
+    padding-top: 90px;
+    transition: 0.4s;
+    z-index: 2000;
+}
+
+.side-menu a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: #e91e63;
+}
+
+/* แสดงเมนูเมื่อเปิด */
+.side-menu.active {
+    right: 0;
 }
