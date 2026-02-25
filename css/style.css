@@ -668,14 +668,14 @@ footer {
 }
 
 .gallery-item {
-    height: 600px;
-    overflow: hidden;
+    height: auto;      /* เอา 600px ออก */
+    overflow: visible; /* ไม่ซ่อนภาพ */
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;          /* สำคัญมาก */
+    object-fit: contain;   /* ไม่ตัดภาพ */
 }
 .gallery-link {
     text-align: center;
