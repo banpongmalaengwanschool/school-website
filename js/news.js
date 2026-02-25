@@ -95,7 +95,7 @@ function renderNews(newsArray) {
 // Format date
 function formatDate(dateString) {
     const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('th-TH', options);
 }
 
@@ -219,3 +219,4 @@ document.addEventListener('DOMContentLoaded', () => {
         loadDownloads();
     }
 });
+
