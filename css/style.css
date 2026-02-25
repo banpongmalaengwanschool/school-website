@@ -650,8 +650,8 @@ footer {
     font-weight: normal;
 }
 /* ===== เปิด-ปิด โหมดไว้อาลัยตรงนี้ ===== */
-body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {    
-    filter: grayscale(10%) brightness(95%);
+body[data-mourning="on"]  {    
+    filter: grayscale(60%) brightness(95%);
 }  
 
 /* ===== Mourning Ribbon Fixed Bottom Right ===== */
@@ -785,13 +785,13 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
 
 /* เมนูด้านข้าง */
 .side-menu {
-    height: 100%;
-    width: 250px;
     position: fixed;
-    top: 0;
+    top: 140px;          /* ให้เริ่มใต้ header */
     right: -250px;
+    width: 150px;
+    height: calc(100% - 140px);  /* ลบความสูง header ออก */
     background: #FF69B4;
-    padding-top: 90px;
+    padding-top: 20px;
     transition: 0.4s;
     z-index: 2000;
 }
@@ -801,7 +801,7 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
     color: white;
     padding: 15px 20px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .side-menu a:hover {

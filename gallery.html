@@ -29,7 +29,7 @@
   </div>
 </div>
 </head>
-<body data-mourning="on">
+<body data-mourning="off">
     <div class="mourning-ribbon">
     <img src="images/ribbon.png" alt="ไว้อาลัย">
 </div>
@@ -165,6 +165,17 @@
 function toggleMenu() {
     document.getElementById("sideMenu").classList.toggle("active");
 }
+/* คลิกพื้นที่ว่างแล้วปิดเมนู */
+document.addEventListener("click", function(e) {
+    const menu = document.getElementById("sideMenu");
+    const toggle = document.querySelector(".menu-toggle");
+
+    // ถ้าคลิกไม่ใช่เมนู และไม่ใช่ปุ่มสามขีด
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove("active");
+    }
+});
+</script>
 </script>
 </body>
 </html>
