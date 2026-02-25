@@ -658,13 +658,13 @@ footer {
 /* ===== GALLERY SECTION ===== */
 
 .gallery-preview {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    display: flex;
+  flex-direction: column;   /* เรียงลงแนวตั้ง */
+  gap: 20px;
 }
 
 .gallery-item {
-    height: 250px;
+    height: 600px;
     overflow: hidden;
 }
 
