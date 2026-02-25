@@ -16,6 +16,7 @@
 
 /* ===== GLOBAL STYLES ===== */
 * {
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,6 +27,7 @@ html {
 }
 
 body {
+    
     font-family: 'Trirong', serif;
     line-height: 1.6;
     color: var(--text-dark);
@@ -761,4 +763,49 @@ body[data-mourning="off"] *:not(.mourning-ribbon):not(.sub-name) {
 .hero-content {
   position: relative;
   z-index: 10;
+}
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: #2d2d2d;
+  color: white;
+  font-size: 14px;
+}
+
+.top-bar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff4da6;
+}
+
+.top-contact a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.top-contact a:hover {
+  color: #ff4da6;
+}
+
+/* มือถือ */
+@media (max-width: 768px) {
+  .top-bar-container {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
 }
