@@ -9,7 +9,7 @@ async function loadImagesFromFolder(folderName) {
     let i = 1;
 
     while (true) {
-        const path = `gallery-images/${folderName}/${i}.jpg`;
+        const path = `gallery-images/${folderName}/${String(i).padStart(3, '0')}.jpg`;
 
         try {
             const res = await fetch(path, { method: "HEAD" });
