@@ -209,61 +209,73 @@
         {
           "id": 1,
           "title": "สถานที่ 1",
-          "src": "gallery-images/622713820_868581989381806_447343846860969220_n.jpg",
+          "src": "gallery-images/a1.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 2,
           "title": "สถานที่ 2",
-          "src": "gallery-images/623312732_868581656048506_7833878110926059123_n.jpg",
+          "src": "gallery-images/a2.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 3,
           "title": "สถานที่ 3",
-          "src": "gallery-images/623371303_868578412715497_1130871758948420050_n.jpg",
+          "src": "gallery-images/a3.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 4,
           "title": "สถานที่ 4",
-          "src": "gallery-images/623431358_868578752715463_4160344843353710692_n.jpg",
+          "src": "gallery-images/a4.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 5,
           "title": "สถานที่ 5",
-          "src": "gallery-images/624578220_868581272715211_9090983953368797803_n.jpg",
+          "src": "gallery-images/a5.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 6,
           "title": "สถานที่ 6",
-          "src": "gallery-images/627033400_875940778645927_7415966142329530283_n.jpg",
+          "src": "gallery-images/a6.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 7,
           "title": "สถานที่ 7",
-          "src": "gallery-images/627387715_875940288645976_5570356984237677028_n.jpg",
+          "src": "gallery-images/a7.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 8,
           "title": "สถานที่ 8",
-          "src": "gallery-images/627964169_875941245312547_6355190220887261174_n.jpg",
+          "src": "gallery-images/a8.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 9,
           "title": "สถานที่ 9",
-          "src": "gallery-images/628234150_875084028731602_1690913437591057191_n.jpg",
+          "src": "gallery-images/a9.jpg",
           "date": "2025-02-20"
         },
         {
           "id": 10,
           "title": "สถานที่ 10",
-          "src": "gallery-images/25.1.jfif",
+          "src": "gallery-images/a10.jpg",
+          "date": "2025-02-20"
+        },
+        {
+          "id": 11,
+          "title": "สถานที่ 10",
+          "src": "gallery-images/a11.jpg",
+          "date": "2025-02-20"
+        },
+        {
+          "id": 12,
+          "title": "สถานที่ 10",
+          "src": "gallery-images/a12.jpg",
           "date": "2025-02-20"
         }
       ]
