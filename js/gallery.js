@@ -4,6 +4,33 @@ let allGalleries = [];
 let currentGalleryIndex = 0;
 let currentImageIndex = 0;
 let currentImages = [];
+async function loadImagesFromFolder(folderName) {
+    const images = [];
+    let i = 1;
+
+    while (true) {
+        const path = `gallery-images/${folderName}/${i}.jpg`;
+
+        try {
+            const res = await fetch(path, { method: "HEAD" });
+            if (!res.ok) break;
+
+            images.push({
+                id: i,
+                title: `ภาพที่ ${i}`,
+                src: path,
+                date: new Date().toISOString().split("T")[0]
+            });
+
+            i++;
+        } catch {
+            break;
+        }
+    }
+
+    return images;
+}
+
 
 // Load gallery data
 async function loadGallery() {
@@ -33,16 +60,18 @@ function renderGalleryTabs() {
 }
 
 // Show gallery by index
-function showGallery(index) {
+async function showGallery(index) {
     currentGalleryIndex = index;
     const gallery = allGalleries[index];
-    currentImages = gallery.images;
-    
+
+    // โหลดรูปจากโฟลเดอร์
+    currentImages = await loadImagesFromFolder(gallery.folder);
+
     // Update active tab
     document.querySelectorAll('.gallery-tab').forEach((tab, i) => {
         tab.classList.toggle('active', i === index);
     });
-    
+
     // Update gallery info
     const infoContainer = document.getElementById('galleryInfo');
     if (infoContainer) {
@@ -51,16 +80,14 @@ function showGallery(index) {
             <p class="gallery-category-description">${gallery.description}</p>
         `;
     }
-    
-    // Render gallery images
+
     renderGalleryImages();
 }
-
 // Render gallery images
 function renderGalleryImages() {
     const container = document.getElementById('galleryContainer');
     
-    if (currentImages.length === 0) {
+    if (!currentImages || currentImages.length === 0) {
         container.innerHTML = '<div class="gallery-empty"><i class="fas fa-inbox"></i><h3>ไม่มีรูปภาพในหมวดหมู่นี้</h3></div>';
         return;
     }
