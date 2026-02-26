@@ -849,16 +849,7 @@ body[data-mourning="on"]  {
     z-index: 2;
     color: white;
 }
-/* มือถือ */
-@media (max-width: 768px) {
-    .hero {
-        height: 35vh;
-        background-size: contain;     /* ไม่ครอป */
-        background-repeat: no-repeat;
-        background-color: #000;       /* กันพื้นขาวโผล่ */
-    }
 
-}
 .hero-about {
     background-image: url('../images/about.jpg');
 }
