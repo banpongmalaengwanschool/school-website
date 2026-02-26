@@ -168,6 +168,7 @@ header {
 .hero {
     background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%),
                 url('../images/school-entrance.png') center 90% / cover no-repeat;
+                background-attachment: fixed;
     background-blend-mode: overlay;
     color: var(--white);
     padding: 6rem 2rem;
@@ -815,12 +816,52 @@ body[data-mourning="on"]  {
 .header-container {
     position: relative;
 }
-.home-page header {
-    position: fixed;
-    top: 0;
-    width: 100%;
+
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
+/* ===== HERO BASE ===== */
+.hero {
+    height: 70vh;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
 }
 
-.home-page {
-    padding-top: 140px; /* เท่าความสูง header */
+/* overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+/* text */
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+/* มือถือ */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
+.hero-about {
+    background-image: url('../images/about.jpg');
+}
+/* ===== FORCE PARALLAX ===== */
+.hero-about {
+    background-image: url('../images/about.jpg');
+    background-attachment: fixed !important;
+    background-size: cover;
+    background-position: center center;
 }
