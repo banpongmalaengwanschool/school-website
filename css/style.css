@@ -695,7 +695,7 @@ body[data-mourning="on"]  {
 /* วิดีโอซ้อน */
 .video-overlay {
   position: absolute;
-  bottom: -100px;   /* อย่าใช้ค่าติดลบก่อน */
+  bottom: -60px;   /* อย่าใช้ค่าติดลบก่อน */
   right: -7px;
   width: 350px;
   z-index: 3;    /* สูงกว่าทุกอย่าง */
@@ -823,8 +823,11 @@ body[data-mourning="on"]  {
     }
 }
 /* ===== HERO BASE ===== */
+/* ================= HERO CLEAN VERSION ================= */
+
+/* โครงหลัก */
 .hero {
-    height: 70vh;
+    height: 65vh;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -832,7 +835,6 @@ body[data-mourning="on"]  {
     align-items: center;
     justify-content: center;
     position: relative;
-    text-align: center;
 }
 
 /* overlay */
@@ -840,34 +842,31 @@ body[data-mourning="on"]  {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.4);
 }
 
-/* text */
+/* ข้อความ */
 .hero-overlay {
     position: relative;
     z-index: 2;
     color: white;
 }
+
+/* รูปเฉพาะหน้า About */
+.hero-about {
+    background-image: url('../images/about.jpg');
+}
+
+/* มือถือ */
 @media (max-width: 768px) {
     .hero {
-        background-attachment: scroll !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        height: 45vh;
+        height: 40vh;              /* ลดความสูง */
+        background-attachment: scroll;
+        background-size: cover;    /* ไม่ใช้ contain จะได้ไม่เห็นขอบดำ */
+        background-position: center top;
     }
 
     .hero::after {
-        background: rgba(0,0,0,0.25) !important; /* ลดความมืด */
+        background: rgba(0,0,0,0.25);
     }
-}
-.hero-about {
-    background-image: url('../images/about.jpg');
-}
-/* ===== FORCE PARALLAX ===== */
-.hero-about {
-    background-image: url('../images/about.jpg');
-    background-attachment: fixed !important;
-    background-size: cover;
-    background-position: center center;
 }
