@@ -2,6 +2,8 @@
 
 let allNews = [];
 let currentFilter = 'all';
+let currentPage = 1;
+const newsPerPage = 6;
 
 // Load news data
 async function loadNews() {
@@ -51,56 +53,95 @@ function filterNews(category, event) {
 // Render news cards
 function renderNews(newsArray) {
     const container = document.getElementById('newsContainer');
-    
+    const paginationContainer = document.getElementById('pagination');
+
     if (newsArray.length === 0) {
-        container.innerHTML = '<div class="empty-state"><i class="fas fa-inbox"></i><h3>ไม่มีข่าวสารในหมวดหมู่นี้</h3></div>';
+        container.innerHTML = '<div class="empty-state"><i class="fas fa-inbox"></i><h3>ไม่มีข่าวสาร</h3></div>';
+        if (paginationContainer) paginationContainer.innerHTML = '';
         return;
     }
-    
-    container.innerHTML = newsArray.map(news => `
+
+    const totalPages = Math.ceil(newsArray.length / newsPerPage);
+    if (currentPage > totalPages) currentPage = 1;
+
+    const start = (currentPage - 1) * newsPerPage;
+    const end = start + newsPerPage;
+    const paginatedNews = newsArray.slice(start, end);
+
+    container.innerHTML = paginatedNews.map(news => `
         <div class="news-card">
             <div class="news-card-image">
-               ${
-        news.video
-        ? `
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/${news.video}?autoplay=1&mute=1&loop=1&playlist=${news.video}&playsinline=1"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen>
-                </iframe>
+                ${
+                    news.video
+                    ? `<div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/${news.video}?playsinline=1"
+                            allowfullscreen>
+                        </iframe>
+                       </div>`
+                    : news.image
+                        ? `<img src="${news.image}" alt="${news.title}">`
+                        : '<div class="news-card-image-placeholder"><i class="fas fa-newspaper"></i></div>'
+                }
             </div>
-          `
-        : news.image
-            ? `<img src="${news.image}" alt="${news.title}" 
-               onerror="this.parentElement.innerHTML='<div class=news-card-image-placeholder><i class=fas fa-newspaper></i></div>'">`
-            : '<div class="news-card-image-placeholder"><i class="fas fa-newspaper"></i></div>'
-    }
-</div>
-                <h3 class="news-card-title">${news.title}</h3>
-                <p class="news-card-description">${news.description}</p>
-                ${news.files && news.files.length > 0 ? `
-                    <div class="news-card-files">
-                        <h4><i class="fas fa-download"></i> ไฟล์ดาวโหลด</h4>
-                        ${news.files.map(file => `
-                            <div class="file-item">
-                                <div class="file-icon ${file.type}">${getFileIcon(file.type)}</div>
-                                <div class="file-info">
-                                    <div class="file-name">${file.name}</div>
-                                    <div class="file-size">${file.size}</div>
-                                </div>
-                                <a href="${file.url}" download class="file-download" title="ดาวโหลด">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                            </div>
-                        `).join('')}
-                    </div>
-                ` : ''}
-            </div>
+
+            <h3 class="news-card-title">${news.title}</h3>
+            <p class="news-card-description">${news.description}</p>
         </div>
     `).join('');
+
+    renderPagination(totalPages, newsArray);
+}
+function renderPagination(totalPages, newsArray) {
+    const paginationContainer = document.getElementById('pagination');
+    if (!paginationContainer) return;
+
+    let html = '';
+
+    if (currentPage > 1) {
+        html += `<button class="page-btn" onclick="changePage(1)">หน้าสุดท้าย &lt;&lt;</button>`;
+        html += `<button class="page-btn" onclick="changePage(${currentPage - 1})">หน้าก่อนหน้า &lt;</button>`;
+    }
+
+    const maxVisible = 7;
+    let startPage = Math.max(1, currentPage - 3);
+    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+
+    if (endPage - startPage < maxVisible - 1) {
+        startPage = Math.max(1, endPage - maxVisible + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+        html += `
+            <button class="page-btn ${i === currentPage ? 'active' : ''}" 
+                onclick="changePage(${i})">
+                ${i}
+            </button>
+        `;
+    }
+
+    if (currentPage < totalPages) {
+        html += `<button class="page-btn" onclick="changePage(${currentPage + 1})">หน้าถัดไป &gt;</button>`;
+        html += `<button class="page-btn" onclick="changePage(${totalPages})">หน้าสุดท้าย &gt;&gt;</button>`;
+    }
+
+    paginationContainer.innerHTML = html;
 }
 
+function changePage(page) {
+    currentPage = page;
+
+    const filtered = currentFilter === 'all'
+        ? allNews
+        : allNews.filter(item => item.category === currentFilter);
+
+    renderNews(filtered);
+
+    window.scrollTo({
+        top: document.getElementById('newsContainer').offsetTop - 100,
+        behavior: 'smooth'
+    });
+}
 // Format date
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -228,4 +269,5 @@ document.addEventListener('DOMContentLoaded', () => {
         loadDownloads();
     }
 });
+
 
