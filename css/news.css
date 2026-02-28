@@ -479,3 +479,12 @@
   border: 1px solid #999;
   font-weight: bold;
 }
+.news-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.news-link:hover {
+  text-decoration: none;
+}

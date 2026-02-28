@@ -12,7 +12,7 @@ async function loadNews() {
         const data = await response.json();
         allNews = data.news;
         renderNews(allNews);
-        initializeFilters();
+        
     } catch (error) {
         console.error('Error loading news:', error);
         document.getElementById('newsContainer').innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-circle"></i><h3>ไม่สามารถโหลดข่าวสารได้</h3></div>';
@@ -33,22 +33,6 @@ function initializeFilters() {
     }
 }
 
-// Filter news by category
-function filterNews(category, event) {
-    currentFilter = category;
-    
-    // Update active button
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    if (event) {
-    event.target.classList.add('active');
-}
-    
-    // Filter and render
-    const filtered = category === 'all' ? allNews : allNews.filter(item => item.category === category);
-    renderNews(filtered);
-}
 
 // Render news cards
 function renderNews(newsArray) {
@@ -68,7 +52,9 @@ function renderNews(newsArray) {
     const end = start + newsPerPage;
     const paginatedNews = newsArray.slice(start, end);
 
-    container.innerHTML = paginatedNews.map(news => `
+   container.innerHTML = paginatedNews.map(news => {
+
+    const cardContent = `
         <div class="news-card">
             <div class="news-card-image">
                 ${
@@ -88,7 +74,21 @@ function renderNews(newsArray) {
             <h3 class="news-card-title">${news.title}</h3>
             <p class="news-card-description">${news.description}</p>
         </div>
-    `).join('');
+    `;
+
+    // ถ้ามีลิงก์ → ครอบด้วย <a>
+    if (news.link) {
+        return `
+            <a href="${news.link}" target="_blank" class="news-link">
+                ${cardContent}
+            </a>
+        `;
+    }
+
+    // ถ้าไม่มีลิงก์ → แสดงปกติ
+    return cardContent;
+
+}).join('');
 
     renderPagination(totalPages, newsArray);
 }
