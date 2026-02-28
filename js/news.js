@@ -58,7 +58,18 @@ function renderNews(newsArray) {
         <div class="news-card">
             <div class="news-card-image">
                 ${
-                    news.video
+                    news.facebook
+        ? `<div style="width:100%">
+             <iframe 
+               src="${news.facebook}"
+               style="width:100%; border:none; overflow:hidden;"
+               scrolling="no"
+               frameborder="0"
+               allowfullscreen="true"
+               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+             </iframe>
+           </div>`
+                    : news.video
                     ? `<div class="video-wrapper">
                         <iframe 
                             src="https://www.youtube.com/embed/${news.video}?playsinline=1"
