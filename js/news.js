@@ -62,7 +62,9 @@ function renderNews(newsArray) {
         ? `<div style="width:100%">
              <iframe 
                src="${news.facebook}"
-               style="width:100%; border:none; overflow:hidden;"
+               style="width:100%"
+                height="550";
+                border:none; overflow:hidden;"
                scrolling="no"
                frameborder="0"
                allowfullscreen="true"
