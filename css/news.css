@@ -56,7 +56,7 @@
 .news-card-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
