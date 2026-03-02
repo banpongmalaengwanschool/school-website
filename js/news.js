@@ -10,7 +10,7 @@ async function loadNews() {
     try {
         const response = await fetch('data/news.json');
         const data = await response.json();
-        allNews = data.news;
+        allNews = data.news.slice().reverse();
         renderNews(allNews);
         
     } catch (error) {
