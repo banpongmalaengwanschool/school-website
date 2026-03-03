@@ -881,3 +881,14 @@ body[data-mourning="on"]  {
     text-decoration: none;
     color: inherit;
 }
+ /* จำนวนผู้เข้าชม */
+@media (max-width: 768px) {
+  .top-bar-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .visitor-counter {
+    font-size: 12px;
+  }
+}

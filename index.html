@@ -54,6 +54,13 @@
       <a href="#"><i class="fab fa-line"></i></a>
       <a href="https://www.youtube.com/@auypongrat"><i class="fab fa-youtube"></i></a>
     </div>
+    <!-- 🔥 จำนวนผู็เข้าชมเวบไซต์ -->
+    <div class="visitor-counter">
+      👁 ผู้เข้าชม: <span id="visitor-count">0</span>
+    </div>
+
+  </div>
+</div>
 
     <div class="top-contact">
       
@@ -427,6 +434,34 @@ document.addEventListener("click", function(e) {
     }
 });
 </script>
+</script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getDatabase, ref, runTransaction, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "ใส่ของคุณ",
+    authDomain: "ใส่ของคุณ",
+    databaseURL: "ใส่ของคุณ",
+    projectId: "school-website-counter",
+    storageBucket: "ใส่ของคุณ",
+    messagingSenderId: "ใส่ของคุณ",
+    appId: "ใส่ของคุณ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const visitorRef = ref(database, "visitorCount");
+
+  // เพิ่ม +1 ทุกครั้งที่มีการเข้าเว็บ
+  runTransaction(visitorRef, (count) => {
+    return (count || 0) + 1;
+  });
+
+  // แสดงผล
+  onValue(visitorRef, (snapshot) => {
+    document.getElementById("visitor-count").innerText = snapshot.val();
+  });
 </script>
 </body>
 </html>
