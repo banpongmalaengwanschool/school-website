@@ -434,33 +434,37 @@ document.addEventListener("click", function(e) {
     }
 });
 </script>
-</script>
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getDatabase, ref, runTransaction, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getDatabase, ref, runTransaction, onValue } 
+    from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
 
   const firebaseConfig = {
-    apiKey: "ใส่ของคุณ",
-    authDomain: "ใส่ของคุณ",
-    databaseURL: "ใส่ของคุณ",
+    apiKey: "AIzaSyCP010B4l4pwHzeBtabpkW5J_Gnzj6czQc",
+    authDomain: "school-website-counter.firebaseapp.com",
+    databaseURL: "https://school-website-counter-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "school-website-counter",
-    storageBucket: "ใส่ของคุณ",
-    messagingSenderId: "ใส่ของคุณ",
-    appId: "ใส่ของคุณ"
+    storageBucket: "school-website-counter.firebasestorage.app",
+    messagingSenderId: "966937276194",
+    appId: "1:966937276194:web:c1e1e4c334490a6714bf7b"
   };
 
   const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-  const visitorRef = ref(database, "visitorCount");
+  const db = getDatabase(app);
+  const counterRef = ref(db, "visitorCount");
 
-  // เพิ่ม +1 ทุกครั้งที่มีการเข้าเว็บ
-  runTransaction(visitorRef, (count) => {
-    return (count || 0) + 1;
+  // เพิ่ม +1 ทุกครั้งที่เข้าเว็บ
+  runTransaction(counterRef, (current) => {
+    return (current || 0) + 1;
   });
 
   // แสดงผล
-  onValue(visitorRef, (snapshot) => {
-    document.getElementById("visitor-count").innerText = snapshot.val();
+  onValue(counterRef, (snapshot) => {
+    const value = snapshot.val() || 0;
+    const el = document.getElementById("visitor-count");
+    if (el) {
+      el.innerText = value;
+    }
   });
 </script>
 </body>
