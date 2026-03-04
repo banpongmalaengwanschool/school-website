@@ -125,11 +125,19 @@
     line-height: 1.4;
 }
 
-.news-card-description {
+.news-card-description span{
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.toggle-news{
+  display:none;
+}
+
+.toggle-news:checked + span{
+  -webkit-line-clamp: unset;
 }
 .news-card-description.expand {
   -webkit-line-clamp: unset;

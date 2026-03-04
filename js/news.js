@@ -85,7 +85,10 @@ function renderNews(newsArray) {
             </div>
 
             <h3 class="news-card-title">${news.title}</h3>
-            <p class="news-card-description">${news.description}</p>
+            <label class="news-card-description">
+<input type="checkbox" class="toggle-news">
+<span>${news.description}</span>
+</label>
         </div>
     `;
 
