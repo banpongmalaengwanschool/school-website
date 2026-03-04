@@ -131,16 +131,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.news-card-description.expand {
-  -webkit-line-clamp: unset;
-  overflow: visible;
-  cursor: pointer;
-}
-.news-card-description.show {
-  -webkit-line-clamp: unset;
-  overflow: visible;
-  cursor: pointer;
-}
 
 .news-card-files {
     border-top: 1px solid #eee;
