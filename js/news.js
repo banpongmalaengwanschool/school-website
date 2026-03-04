@@ -102,6 +102,13 @@ function renderNews(newsArray) {
     return cardContent;
 
 }).join('');
+// ขยายข้อความเฉพาะช่องสีขาว
+document.querySelectorAll('.news-card-description').forEach(desc => {
+    desc.onclick = function(e){
+        e.stopPropagation();
+        this.classList.toggle('expand');
+    }
+});
 
     renderPagination(totalPages, newsArray);
 }
