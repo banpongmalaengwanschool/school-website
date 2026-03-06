@@ -1,0 +1,6 @@
+# อนุญาตให้บอททุกตัว (Google, Bing, etc.) เข้าถึงเว็บไซต์ได้
+User-agent: *
+Allow: /
+
+# ระบุตำแหน่งไฟล์ Sitemap ให้บอทหาเจอทันที
+Sitemap: https://banpongmalaengwanschool.github.io/school-website/sitemap.xml
