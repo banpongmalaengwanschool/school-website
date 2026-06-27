@@ -1,10 +1,10 @@
 {
   "summary": {
-    "totalStudents": 260,
-    "maleStudents": 153,
-    "femaleStudents": 107,
+    "totalStudents": 250,
+    "maleStudents": 144,
+    "femaleStudents": 106,
     "academicYear": "2569",
-    "semester": 1,
+    "semester": 1,  
     "updateDate": "27 มิถุนายน 2569"
   },
   "levels": [
@@ -16,24 +16,24 @@
       "classes": [
         {
           "grade": "อนุบาลปีที่ 1",
-          "male": 10,
-          "female": 8,
-          "total": 18
+          "male": 3,
+          "female": 10,
+          "total": 13
         },
         {
           "grade": "อนุบาลปีที่ 2",
-          "male": 8,
-          "female": 9,
-          "total": 17
+          "male": 12,
+          "female": 8,
+          "total": 20
         },
         {
           "grade": "อนุบาลปีที่ 3",
-          "male": 12,
-          "female": 5,
+          "male": 9,
+          "female": 8,
           "total": 17
         }
       ],
-      "subtotal": 52
+      "subtotal": 50
     },
     {
       "id": 2,
@@ -43,42 +43,42 @@
       "classes": [
         {
           "grade": "ประถมศึกษาปีที่ 1",
-          "male": 15,
-          "female": 18,
-          "total": 33
-        },
-        {
-          "grade": "ประถมศึกษาปีที่ 2",
-          "male": 13,
-          "female": 6,
+          "male": 14,
+          "female": 5,
           "total": 19
         },
         {
+          "grade": "ประถมศึกษาปีที่ 2",
+          "male": 16,
+          "female": 19,
+          "total": 35
+        },
+        {
           "grade": "ประถมศึกษาปีที่ 3",
-          "male": 17,
-          "female": 10,
-          "total": 27
+          "male": 12,
+          "female": 6,
+          "total": 18
         },
         {
           "grade": "ประถมศึกษาปีที่ 4",
+          "male": 14,
+          "female": 9,
+          "total": 23
+        },
+        {
+          "grade": "ประถมศึกษาปีที่ 5",
           "male": 12,
           "female": 9,
           "total": 21
         },
         {
-          "grade": "ประถมศึกษาปีที่ 5",
+          "grade": "ประถมศึกษาปีที่ 6",
           "male": 17,
           "female": 5,
           "total": 22
-        },
-        {
-          "grade": "ประถมศึกษาปีที่ 6",
-          "male": 10,
-          "female": 11,
-          "total": 21
         }
       ],
-      "subtotal": 143
+      "subtotal": 138
     },
     {
       "id": 3,
@@ -88,24 +88,24 @@
       "classes": [
         {
           "grade": "มัธยมศึกษาปีที่ 1",
-          "male": 18,
+          "male": 10,
           "female": 9,
-          "total": 27
+          "total": 19
         },
         {
           "grade": "มัธยมศึกษาปีที่ 2",
-          "male": 10,
-          "female": 10,
-          "total": 20
+          "male": 15,
+          "female": 9,
+          "total": 24
         },
         {
           "grade": "มัธยมศึกษาปีที่ 3",
-          "male": 11,
-          "female": 7,
-          "total": 18
+          "male": 10,
+          "female": 9,
+          "total": 19
         }
       ],
-      "subtotal": 65
+      "subtotal": 62
     }
   ]
 }
