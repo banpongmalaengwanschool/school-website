@@ -651,8 +651,28 @@ footer {
     font-weight: normal;
 }
 
-/* ===== Mourning mode completely removed ===== */
-/* (black ribbon + grayscale filter have been deleted) */
+/* ===== Hide mourning ribbon on all pages ===== */
+.mourning-ribbon {
+    display: none !important;
+}
+
+/* ===== Visitor Counter Style ===== */
+.visitor-counter {
+    color: #ff69b4;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.visitor-counter span {
+    color: #ffffff;
+    background: linear-gradient(135deg, #E91E8C, #C71585);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+}
 
 .students-link {
     text-align: center;
