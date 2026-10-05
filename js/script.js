@@ -121,23 +121,34 @@ if (contactForm) {
     });
 }
 
-// ===== MOBILE MENU TOGGLE =====
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.querySelector('nav ul');
-
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
+// ===== SIDE MENU TOGGLE (Hamburger) =====
+function toggleMenu() {
+    const sideMenu = document.getElementById('sideMenu');
+    if (sideMenu) {
+        sideMenu.classList.toggle('active');
+    }
 }
 
-// Close menu when link is clicked
-document.querySelectorAll('nav a').forEach(link => {
+// Close side menu when clicking a link
+document.querySelectorAll('.side-menu a').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
+        const sideMenu = document.getElementById('sideMenu');
+        if (sideMenu) {
+            sideMenu.classList.remove('active');
+        }
     });
+});
+
+// Close side menu when clicking outside
+document.addEventListener('click', (e) => {
+    const sideMenu = document.getElementById('sideMenu');
+    const menuToggle = document.querySelector('.menu-toggle');
+    
+    if (sideMenu && sideMenu.classList.contains('active')) {
+        if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            sideMenu.classList.remove('active');
+        }
+    }
 });
 
 // ===== PARALLAX EFFECT =====
