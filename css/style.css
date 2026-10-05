@@ -650,26 +650,10 @@ footer {
     font-size: 0.8em;
     font-weight: normal;
 }
-/* ===== เปิด-ปิด โหมดไว้อาลัยตรงนี้ ===== */
-body[data-mourning="on"]  {    
-    filter: grayscale(60%) brightness(95%);
-}  
 
-/* ===== Mourning Ribbon Fixed Bottom Right ===== */
+/* ===== Mourning mode completely removed ===== */
+/* (black ribbon + grayscale filter have been deleted) */
 
-.mourning-ribbon {
-    position: fixed !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    z-index: 999999 !important;
-    pointer-events: none;
-}
-
-.mourning-ribbon img {
-    width: 140px;
-    height: auto;
-    display: block;
-}
 .students-link {
     text-align: center;
 }
