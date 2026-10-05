@@ -1,6 +1,5 @@
 /* ===== STAFF PAGE STYLES ===== */
 
-/* Staff Filter */
 .staff-filter {
     display: flex;
     gap: 1rem;
@@ -30,7 +29,6 @@
     box-shadow: 0 5px 15px rgba(233, 30, 140, 0.3);
 }
 
-/* Staff Grid */
 .staff-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -38,7 +36,6 @@
     margin-top: 2rem;
 }
 
-/* Staff Card — formal directory style */
 .staff-card {
     background: #ffffff;
     border-radius: 16px;
@@ -65,24 +62,39 @@
 .staff-card-avatar {
     width: 150px;
     height: 150px;
-    background: #f7f7f7;
+    background: #ffffff;
     border-radius: 50%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
     border: 1px solid #d9d9d9;
     overflow: hidden;
     box-shadow: 0 0 0 6px #ffffff, 0 0 0 7px #e6e6e6;
-    padding-top: 14px;
 }
 
 .staff-card-avatar img {
     width: 100%;
-    height: calc(100% - 6px);
+    height: 100%;
+    object-fit: cover;
+    object-position: center 8%;
+    border-radius: 50%;
+}
+
+/* เฉพาะครูจีราภร: ย่อรูปลง เว้นข้างบนเป็นสีขาว */
+.staff-card-avatar.avatar-headroom {
+    align-items: flex-end;
+    background: #ffffff;
+    padding-top: 16px;
+}
+
+.staff-card-avatar.avatar-headroom img {
+    width: 100%;
+    height: calc(100% - 4px);
     object-fit: cover;
     object-position: center top;
-    border-radius: 0 0 80px 80px;
+    border-radius: 0 0 75px 75px;
+    background: #ffffff;
 }
 
 .staff-card-name {
@@ -113,7 +125,6 @@
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: 600;
-    text-transform: none;
     margin: 0.4rem 0 0.8rem;
 }
 
@@ -146,7 +157,6 @@
     display: block;
 }
 
-/* Staff Stats */
 .staff-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -187,7 +197,6 @@
     font-size: 0.95rem;
 }
 
-/* Search Box */
 .staff-search {
     display: flex;
     gap: 1rem;
@@ -226,7 +235,6 @@
     box-shadow: 0 5px 15px rgba(233, 30, 140, 0.3);
 }
 
-/* Empty State */
 .staff-empty {
     text-align: center;
     padding: 3rem 2rem;
@@ -245,7 +253,6 @@
     margin-bottom: 0.5rem;
 }
 
-/* Department Colors — kept quiet, no full-card fill */
 .dept-admin,
 .dept-teaching,
 .dept-support,
@@ -255,14 +262,8 @@
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
@@ -270,42 +271,16 @@
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 1rem;
     }
-
-    .staff-card-avatar {
-        width: 120px;
-        height: 120px;
-        padding-top: 10px;
-    }
-
-    .staff-filter {
-        gap: 0.5rem;
-    }
-
-    .staff-filter-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
-    }
-
-    .staff-search {
-        flex-direction: column;
-    }
-
-    .staff-stats {
-        grid-template-columns: 1fr;
-    }
+    .staff-card-avatar { width: 120px; height: 120px; }
+    .staff-card-avatar.avatar-headroom { padding-top: 12px; }
+    .staff-filter { gap: 0.5rem; }
+    .staff-filter-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
+    .staff-search { flex-direction: column; }
+    .staff-stats { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-    .staff-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .staff-filter {
-        gap: 0.3rem;
-    }
-
-    .staff-filter-btn {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.75rem;
-    }
+    .staff-grid { grid-template-columns: 1fr; }
+    .staff-filter { gap: 0.3rem; }
+    .staff-filter-btn { padding: 0.5rem 0.8rem; font-size: 0.75rem; }
 }
