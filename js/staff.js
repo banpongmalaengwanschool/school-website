@@ -12,6 +12,10 @@ function splitRole(position) {
     return { title: text, duty: '' };
 }
 
+function avatarClass(name) {
+    return (name || '').includes('จีราภร') ? 'staff-card-avatar avatar-headroom' : 'staff-card-avatar';
+}
+
 async function loadStaff() {
     try {
         const response = await fetch('data/staff.json');
@@ -42,7 +46,7 @@ function renderStaffCards() {
         return `
         <div class="staff-card">
             <div class="staff-card-header">
-                <div class="staff-card-avatar">
+                <div class="${avatarClass(staff.name)}">
                     <img src="images/staff/${staff.image}" alt="${staff.name}">
                 </div>
                 <div class="staff-card-name">${staff.name}</div>
