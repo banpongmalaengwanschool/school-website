@@ -3,7 +3,15 @@
 let allStaff = [];
 let filteredStaff = [];
 
-// Load staff data
+function splitRole(position) {
+    const text = position || '';
+    const match = text.match(/^(.*?)\s*\((.*)\)\s*$/);
+    if (match) {
+        return { title: match[1].trim(), duty: match[2].trim() };
+    }
+    return { title: text, duty: '' };
+}
+
 async function loadStaff() {
     try {
         const response = await fetch('data/staff.json');
@@ -18,42 +26,46 @@ async function loadStaff() {
     }
 }
 
-// Render staff cards
 function renderStaffCards() {
     const container = document.getElementById('staffGrid');
-    
+
     if (filteredStaff.length === 0) {
         container.innerHTML = '<div class="staff-empty" style="grid-column: 1/-1;"><i class="fas fa-search"></i><h3>ไม่พบข้อมูลบุคลากร</h3></div>';
         return;
     }
-    
-    container.innerHTML = filteredStaff.map(staff => `
+
+    container.innerHTML = filteredStaff.map(staff => {
+        const role = splitRole(staff.position);
+        const dutyLine = role.duty
+            ? `<p><i class="fas fa-tasks"></i><span><span class="staff-label">หน้าที่การงาน</span>${role.duty}</span></p>`
+            : '';
+        return `
         <div class="staff-card">
             <div class="staff-card-header">
                 <div class="staff-card-avatar">
-    <img src="images/staff/${staff.image}" alt="${staff.name}">
-</div>
+                    <img src="images/staff/${staff.image}" alt="${staff.name}">
+                </div>
                 <div class="staff-card-name">${staff.name}</div>
-                <div class="staff-card-position">${staff.position}</div>
+                <div class="staff-card-position">${role.title}</div>
             </div>
             <div class="staff-card-body">
                 <div class="staff-card-department">${staff.department}</div>
                 <div class="staff-card-info">
-                    <p><i class="fas fa-briefcase"></i> ${staff.position}</p>
-                    <p><i class="fas fa-building"></i> ${staff.department}</p>
+                    <p><i class="fas fa-briefcase"></i><span><span class="staff-label">ตำแหน่ง</span>${role.title}</span></p>
+                    ${dutyLine}
+                    <p><i class="fas fa-building"></i><span><span class="staff-label">กลุ่มงาน</span>${staff.department}</span></p>
                 </div>
             </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
 }
 
-// Render staff statistics
 function renderStaffStats() {
     const totalStaff = allStaff.length;
     const teachers = allStaff.filter(s => s.department === 'การเรียนการสอน').length;
     const admin = allStaff.filter(s => s.department === 'บริหาร').length;
     const support = allStaff.filter(s => s.department === 'สนับสนุน').length;
-    
+
     const statsContainer = document.getElementById('staffStats');
     if (statsContainer) {
         statsContainer.innerHTML = `
@@ -81,50 +93,45 @@ function renderStaffStats() {
     }
 }
 
-// Filter staff by department
 function filterStaff(department, event) {
     if (department === 'all') {
         filteredStaff = allStaff;
     } else {
         filteredStaff = allStaff.filter(staff => staff.department === department);
     }
-    
-    // Update active button
+
     document.querySelectorAll('.staff-filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     if (event) {
-    event.target.classList.add('active');
-}
-    
+        event.target.classList.add('active');
+    }
+
     renderStaffCards();
 }
 
-// Search staff
 function searchStaff() {
     const searchInput = document.getElementById('staffSearchInput');
     const query = searchInput.value.toLowerCase();
-    
-    filteredStaff = allStaff.filter(staff => 
+
+    filteredStaff = allStaff.filter(staff =>
         staff.name.toLowerCase().includes(query) ||
         staff.position.toLowerCase().includes(query) ||
         staff.department.toLowerCase().includes(query)
     );
-    
+
     renderStaffCards();
 }
 
-// Load staff when page loads
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('staffGrid')) {
         loadStaff();
-        
-        // Add search functionality
+
         const searchBtn = document.getElementById('staffSearchBtn');
         if (searchBtn) {
             searchBtn.addEventListener('click', searchStaff);
         }
-        
+
         const searchInput = document.getElementById('staffSearchInput');
         if (searchInput) {
             searchInput.addEventListener('keypress', (e) => {
