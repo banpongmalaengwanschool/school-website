@@ -61,6 +61,7 @@
     </div>
     <!-- 🔥 จำนวนผู้เข้าชมเว็บไซต์ -->
     <div class="visitor-counter">
+      ผู้เข้าชมทั้งหมด: <span id="visitor-count">กำลังโหลด...</span>
     </div>
 
   </div>
@@ -390,5 +391,49 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    <!-- Firebase Visitor Counter -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script>
+      // Firebase configuration for school website visitor counter
+      const firebaseConfig = {
+        apiKey: "AIzaSyDummyKeyForSchoolWebsite",
+        authDomain: "school-website-counter.firebaseapp.com",
+        databaseURL: "https://school-website-counter-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "school-website-counter",
+        storageBucket: "school-website-counter.appspot.com",
+        messagingSenderId: "123456789",
+        appId: "1:123456789:web:abcdef"
+      };
+
+      // Note: This is a placeholder. For production, create a real Firebase project
+      // and replace with real config. For now, we use a simple localStorage fallback.
+
+      function updateVisitorCount() {
+        const countEl = document.getElementById('visitor-count');
+        if (!countEl) return;
+
+        // Simple localStorage based counter (works immediately without Firebase setup)
+        let count = parseInt(localStorage.getItem('schoolVisitorCount') || '0');
+        count += 1;
+        localStorage.setItem('schoolVisitorCount', count);
+        countEl.textContent = count.toLocaleString('th-TH');
+
+        // Optional: If you create a real Firebase project later, uncomment below
+        /*
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        const ref = db.ref('visitorCount');
+        ref.transaction((current) => (current || 0) + 1);
+        ref.on('value', (snapshot) => {
+          countEl.textContent = (snapshot.val() || 0).toLocaleString('th-TH');
+        });
+        */
+      }
+
+      // Run when page loads
+      document.addEventListener('DOMContentLoaded', updateVisitorCount);
+    </script>
 </body>
 </html>
