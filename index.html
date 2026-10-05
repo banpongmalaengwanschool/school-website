@@ -398,11 +398,9 @@
         const countEl = document.getElementById('visitor-count');
         if (!countEl) return;
 
-        // ใช้ namespace เฉพาะของโรงเรียนนี้
         const namespace = 'banpongmalaengwan-school';
         const key = 'visits';
 
-        // เพิ่มจำนวน + ดึงค่าล่าสุด
         fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
           .then(response => response.json())
           .then(data => {
@@ -417,6 +415,23 @@
             countEl.textContent = '-';
           });
       })();
+    </script>
+
+    <!-- Side Menu Toggle (เหมือนหน้าอื่น) -->
+    <script>
+      function toggleMenu() {
+        document.getElementById("sideMenu").classList.toggle("active");
+      }
+
+      /* คลิกพื้นที่ว่างแล้วปิดเมนู */
+      document.addEventListener("click", function(e) {
+        const menu = document.getElementById("sideMenu");
+        const toggle = document.querySelector(".menu-toggle");
+
+        if (menu && toggle && !menu.contains(e.target) && !toggle.contains(e.target)) {
+          menu.classList.remove("active");
+        }
+      });
     </script>
 </body>
 </html>
