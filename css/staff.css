@@ -38,85 +38,111 @@
     margin-top: 2rem;
 }
 
-/* Staff Card */
+/* Staff Card — formal directory style */
 .staff-card {
-    background: var(--white);
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid #ececec;
+    border-top: 3px solid #f3b4d4;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
     animation: fadeInUp 0.6s ease;
-    border-top: 4px solid var(--primary-pink);
 }
 
 .staff-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
 }
 
 .staff-card-header {
-    background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
-    padding: 2rem 1.5rem;
+    background: #ffffff;
+    padding: 1.75rem 1.25rem 0.5rem;
     text-align: center;
-    color: var(--white);
+    color: #1a1a1a;
 }
 
 .staff-card-avatar {
-    width: 180px;
-    height: 180px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 150px;
+    height: 150px;
+    background: #f7f7f7;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
     margin: 0 auto 1rem;
-    border: 3px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+    box-shadow: 0 0 0 6px #ffffff, 0 0 0 7px #e6e6e6;
+}
+
+.staff-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 50%;
 }
 
 .staff-card-name {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
+    color: #1a1a1a;
+    line-height: 1.4;
 }
 
 .staff-card-position {
     font-size: 0.9rem;
-    opacity: 0.9;
+    color: #666666;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
 .staff-card-body {
-    padding: 1.5rem;
+    padding: 0.75rem 1.25rem 1.4rem;
+    text-align: center;
 }
 
 .staff-card-department {
     display: inline-block;
-    background: rgba(233, 30, 140, 0.1);
-    color: var(--primary-pink);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+    background: #fde8f3;
+    color: #c2186a;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: none;
+    margin: 0.4rem 0 0.8rem;
 }
 
 .staff-card-info {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    color: #555555;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    text-align: left;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 0.85rem;
 }
 
 .staff-card-info p {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.55rem;
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.45rem;
+    color: #444444;
 }
 
 .staff-card-info i {
-    color: var(--primary-pink);
-    width: 20px;
+    color: #c2186a;
+    width: 18px;
+    margin-top: 0.15rem;
+}
+
+.staff-label {
+    color: #888888;
+    font-size: 0.78rem;
+    display: block;
 }
 
 /* Staff Stats */
@@ -218,21 +244,13 @@
     margin-bottom: 0.5rem;
 }
 
-/* Department Colors */
-.dept-admin {
-    background: linear-gradient(135deg, #FF6B6B, #FF8E72) !important;
-}
-
-.dept-teaching {
-    background: linear-gradient(135deg, #4ECDC4, #44A08D) !important;
-}
-
-.dept-support {
-    background: linear-gradient(135deg, #FFB347, #FFA500) !important;
-}
-
+/* Department Colors — kept quiet, no full-card fill */
+.dept-admin,
+.dept-teaching,
+.dept-support,
 .dept-other {
-    background: linear-gradient(135deg, #9B59B6, #8E44AD) !important;
+    background: #fde8f3 !important;
+    color: #c2186a !important;
 }
 
 /* Animations */
@@ -250,8 +268,13 @@
 /* Responsive */
 @media (max-width: 768px) {
     .staff-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 1rem;
+    }
+
+    .staff-card-avatar {
+        width: 120px;
+        height: 120px;
     }
 
     .staff-filter {
