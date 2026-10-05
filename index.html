@@ -392,28 +392,34 @@
 
     <script src="js/script.js"></script>
 
-    <!-- Global Visitor Counter (CountAPI - ตัวเลขรวมจริง) -->
+    <!-- Global Visitor Counter (countapi.xyz ปิดบริการแล้ว จึงใช้ countapi.mileshilliard.com) -->
     <script>
       (function() {
         const countEl = document.getElementById('visitor-count');
         if (!countEl) return;
 
-        const namespace = 'banpongmalaengwan-school';
-        const key = 'visits';
+        const key = 'banpongmalaengwan-school-visits';
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 8000);
 
-        fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-          .then(response => response.json())
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/' + encodeURIComponent(key), {
+          signal: controller.signal
+        })
+          .then(response => {
+            if (!response.ok) throw new Error('counter ' + response.status);
+            return response.json();
+          })
           .then(data => {
-            if (data && data.value) {
-              countEl.textContent = data.value.toLocaleString('th-TH');
-            } else {
-              countEl.textContent = '1';
-            }
+            const value = Number(data && data.value);
+            countEl.textContent = Number.isFinite(value)
+              ? value.toLocaleString('th-TH')
+              : '-';
           })
           .catch(err => {
             console.log('Counter error:', err);
             countEl.textContent = '-';
-          });
+          })
+          .finally(() => clearTimeout(timer));
       })();
     </script>
 
